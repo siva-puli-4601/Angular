@@ -7,25 +7,18 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
 import { SettingsComponent } from './dashboard/settings/settings.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   {path:'about', component:AboutComponent},
   {path:'login',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent,
-    canActivate:[AuthGuard],
-    canActivateChild:[AuthGuard],
-
-    children:
-    [
-      {path:'profile', component:ProfileComponent},
-      {path:'settings',component:SettingsComponent},
-      {path:"",redirectTo:'profile',pathMatch:'full'}
-    ]
-
-    
+   {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module')
+        .then(m => m.DashboardModule)
   },
-
   // { path: 'profile/:id', component: ProfileComponent },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // default

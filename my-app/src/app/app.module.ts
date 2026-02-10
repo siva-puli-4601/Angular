@@ -5,9 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProfileComponent } from './dashboard/profile/profile.component';
-import { SettingsComponent } from './dashboard/settings/settings.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -15,9 +12,6 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    DashboardComponent,
-    ProfileComponent,
-    SettingsComponent,
     LoginComponent,
   ],
   imports: [
