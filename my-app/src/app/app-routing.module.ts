@@ -5,11 +5,16 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { SettingsComponent } from './dashboard/settings/settings.component';
+import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   {path:'about', component:AboutComponent},
+  {path:'login',component:LoginComponent},
   {path:'dashboard',component:DashboardComponent,
+    canActivate:[AuthGuard],
+    canActivateChild:[AuthGuard],
 
     children:
     [
