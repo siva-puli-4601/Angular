@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { SettingsComponent } from './dashboard/settings/settings.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SettingsComponent } from './dashboard/settings/settings.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

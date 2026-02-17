@@ -5,9 +5,10 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { SettingsComponent } from './dashboard/settings/settings.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: AppComponent },
   {path:'about', component:AboutComponent},
   {path:'dashboard',component:DashboardComponent,
 
@@ -23,7 +24,7 @@ const routes: Routes = [
 
   // { path: 'profile/:id', component: ProfileComponent },
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' }, // default
+  // { path: '', redirectTo: 'home', pathMatch: 'full' }, // default
   { path: '**', redirectTo: 'home' } // wildcard
 ];
 
